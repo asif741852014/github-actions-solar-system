@@ -26,5 +26,14 @@ jobs:
             key: ${{ runner.os }}-abcd-${{ hashFiles('**/package-lock.json') }}
         - name: Install Dependencies
           run: npm install
-    
+    u1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: caching
+          uses: actions/cache@v4
+          with:
+            path: ~/.npm
+            key: ${{ runner.os }}-abcd-${{ hashFiles('**/package-lock.json') }}
+        - name: Install Dependencies
+          run: npm install
         
