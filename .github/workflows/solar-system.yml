@@ -19,7 +19,11 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 20
-    
+        - name: caching
+          uses: actions/cache@v4
+          with:
+            path: ~/.npm
+            key: ${{ runner.os }}-abcd-${{ hashFiles('**/lockfiles') }}
         - name: Install Dependencies
           run: npm install
     
@@ -31,4 +35,3 @@ jobs:
           with:
             name: Mocha-Test-Result
             path: test-results.xml
-            
