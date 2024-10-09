@@ -23,7 +23,7 @@ jobs:
           uses: actions/cache@v4
           with:
             path: ~/.npm
-            key: ${{ runner.os }}-abcd-${{ hashFiles('**/lockfiles') }}
+            key: ${{ runner.os }}-abcd-${{ hashFiles('**/package-lock.json') }}
         - name: Install Dependencies
           run: npm install
     
